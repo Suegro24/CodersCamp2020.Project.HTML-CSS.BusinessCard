@@ -2,17 +2,257 @@
 <html lang="pl">
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>CodersCamp | Projekt 1 - HTML i CSS</title>
-    <meta name="description" content="CodersCamp to darmowy, otwarty kurs programowania webowego we Wrocławiu. Sprawdź, czego nauczysz się na CodersCamp i spróbuj swoich sił w branży IT!">
-
+    <title>Dominik Puchała</title>
+    <meta name="description" content="Dominik Puchała Portfolio Frontend Developer">
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/mobile.css" rel="stylesheet" type="text/css" media="screen and (max-width: 1440px)">
+    <link rel="shortcut icon" href="assets/image/laptop.svg">
 </head>
 
 <body>
+    <header id="header" class="container__header flexbox">
+        <nav class="navigation">
+            <div class="hamburger flexbox">
+                <input class="fake-checkbox" type="checkbox">
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+                <ul class="list__mobile font-weight-700">
+                    <li class="list-mobile__item padding-10"><a href="#home">Home</a></li>
+                    <li class="list-mobile__item padding-10"><a href="#about">About</a></li>
+                    <li class="list-mobile__item padding-10"><a href="#skills">Skills</a></li>
+                    <li class="list-mobile__item padding-10"><a href="#projects">Projects</a></li>
+                    <li class="list-mobile__item padding-10"><a href="#contact">Hire me</a></li>
+                </ul>
+            </div>
+            <ul class="list font-weight-700">
+                <li class="list__item padding-10"><a href="#home">Home</a></li>
+                <li class="list__item padding-10"><a href="#about">About</a></li>
+                <li class="list__item padding-10"><a href="#skills">Skills</a></li>
+                <li class="list__item padding-10"><a href="#projects">Projects</a></li>
+                <li class="list__item--bg-blue-sapphire padding-10"><a href="#contact">Hire me</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home" class="container container__background-image-1">
+            <div class="container-50 container--position-centered flexbox container__start">
+                <div class="flexbox start__title">
+                    <p class="title text--center text-shadow">Dominik Puchała</p>
+                    <p class="title--small text--center text-shadow">Frontend Developer</p>
+                </div>
+            </div>
+        </section>
+        <section id="about" class="container container__about padding-50 container--bg-animated">
+            <h2 class="title--dark">About</h2>
+            <div class="flexbox container__about-box container--margin-centered font-size--medium">
+                <img class="about__image" src="assets/image/profile.png" alt="Dominik Puchała profile image">
+                <p class="about__paragraph line-height-30">Hi, my name is 
+                    <span class="span--color-blue-sapphire font-weight-700">Dominik </span> 
+                    and I create web pages. I study and live in Rzeszów, Poland. My hobbies are bridge (card game) and learning foreign laguages. I also enjoy playing video games so if you want to play, leave something behide in the <a href="#contact"><span class="span--color-blue-sapphire font-weight-700 font-size--medium">contact</span></a> section <span>🙂<span>  
+                </p>
+            </div>
+            <footer class="about__social-media margin-top-50">
+                <ul class="list__social-media flexbox container--margin-centered">
+                    <li class="list__item-social-media">
+                        <a href="https://www.facebook.com/profile.php?id=100003088849087" target="_blank">
+                            <img class="icon" src="assets/image/facebook.svg" alt="facebook icon">
+                        </a>
+                    </li>
+                    <li class="list__item-social-media">
+                        <a href="https://twitter.com/Suegro24" target="_blank">
+                            <img class="icon" src="assets/image/twitter.svg" alt="twitter icon">
+                        </a>
+                    </li>
+                    <li class="list__item-social-media">
+                        <a href="https://www.instagram.com/suegro24/" target="_blank">
+                            <img class="icon" src="assets/image/instagram.svg" alt="instagram icon">
+                        </a>
+                    </li>
+                    <li class="list__item-social-media">
+                        <a href="https://www.linkedin.com/in/dominik-pucha%C5%82a-804153162/" target="_blank">
+                            <img class="icon" src="assets/image/linkedin.png" alt="linkedin icon">
+                        </a>
+                    </li>
+                    <li class="list__item-social-media">
+                        <a href="https://github.com/Suegro24" target="_blank">
+                            <img class="icon" src="assets/image/github.png" alt="github icon">
+                        </a>
+                    </li>
+                </ul>
+            </footer>
+        </section>
+        <section id="skills" class="container padding-50">
+            <h2 class="title--dark">Skills</h2>
+            <div class="grid skills">
+                <div class="skill font-size--medium">
+                    <div class="skill__image image__html"></div>
+                    <div class="skill__name">
+                        <p>HTML5</p>
+                    </div>
+                    <div class="skill__tier">
+                        <div class="progress-70"></div>
+                    </div>
+                </div>
+                <div class="skill font-size--medium">
+                    <div class="skill__image image__css"></div>
+                    <div class="skill__name">
+                        <p>CSS3</p>
+                    </div>
+                    <div class="skill__tier">
+                        <div class="progress-80"></div>
+                    </div>
+                </div>
+                <div class="skill font-size--medium">
+                    <div class="skill__image image__sass"></div>
+                    <div class="skill__name">
+                        <p>SASS</p>
+                    </div>
+                    <div class="skill__tier">
+                        <div class="progress-60"></div>
+                    </div>
+                </div>
+                <div class="skill font-size--medium">
+                    <div class="skill__image image__js"></div>
+                    <div class="skill__name">
+                        <p>JavaScript</p>
+                    </div>
+                    <div class="skill__tier">
+                        <div class="progress-30"></div>
+                    </div>
+                </div>
+                <div class="skill font-size--medium">
+                    <div class="skill__image image__angular"></div>
+                    <div class="skill__name">
+                        <p>Angular</p>
+                    </div>
+                    <div class="skill__tier">
+                        <div class="progress-50"></div>
+                    </div>
+                </div>
+                <div class="skill font-size--medium">
+                    <div class="skill__image image__git"></div>
+                    <div class="skill__name skill__name--git">
+                        <p>Git</p>
+                    </div>
+                    <div class="skill__tier">
+                        <div class="progress-60"></div>
+                    </div>
+                </div>
+                <div class="skill font-size--medium">
+                    <div class="skill__image image__england"></div>
+                    <div class="skill__name">
+                        <p>English</p>
+                    </div>
+                    <div class="skill__tier">
+                        <div class="progress-70"></div>
+                    </div>
+                </div>
+                <div class="skill font-size--medium">
+                    <div class="skill__image image__spain"></div>
+                    <div class="skill__name">
+                        <p>Spanish</p>
+                    </div>
+                    <div class="skill__tier">
+                        <div class="progress-15"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container__parallax">
+            <div class="parallax__image"></div>
+        </section>
+        <section id="projects" class="container padding-50 container--bg-cadet-blue">
+            <h2 class="title--dark">Projects</h2>
+            <div class="grid container__projects margin-top-50">
+                <div class="project project__background-1">
+                    <div class="project__description">
+                        <a href="https://github.com/Suegro24/krzyzowka" target="_blank">
+                            <button class="button">
+                                <span class="position-relative font--dark">Code</span>
+                            </button>
+                        </a>
+                        <a href="https://suegro24.github.io/krzyzowka/" target="_blank">
+                            <button class="button">
+                                <span class="position-relative font--dark">Live</span>
+                            </button>
+                        </a>
+                    </div>
+                    <div class="project__technologies">
+                        <ul class="flexbox project__list">
+                            <li class="project-list__item font--dark">HTML5</li>
+                            <li class="project-list__item font--dark">SASS</li>
+                            <li class="project-list__item font--dark">JavaScript</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="project project__background-2">
+                    <div class="project__description">
+                        <a href="https://github.com/Suegro24/formularz" target="_blank">
+                            <button class="button">
+                                <span class="position-relative font--dark">Code</span>
+                            </button>
+                        </a>
+                        <a href="https://suegro24.github.io/formularz/" target="_blank">
+                            <button class="button">
+                                <span class="position-relative font--dark">Live</span>
+                            </button>
+                        </a>
+                    </div>
+                    <div class="project__technologies">
+                        <ul class="flexbox project__list">
+                            <li class="project-list__item font--dark">HTML5</li>
+                            <li class="project-list__item font--dark">SASS</li>
+                            <li class="project-list__item font--dark">jQuery</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="project project__background-3">
+                    <div class="project__description">
+                        <a href="https://github.com/Suegro24/to-do-list" target="_blank">
+                            <button class="button">
+                                <span class="position-relative font--dark">Code</span>
+                            </button>
+                        </a>
+                        <a href="https://suegro24.github.io/to-do-list/" target="_blank">
+                            <button class="button">
+                                <span class="position-relative font--dark">Live</span>
+                            </button>
+                        </a>
+                    </div>
+                    <div class="project__technologies">
+                        <ul class="flexbox project__list">
+                            <li class="project-list__item font--dark">HTML5</li>
+                            <li class="project-list__item font--dark">SASS</li>
+                            <li class="project-list__item font--dark">JavaScript</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="container container--bg-tea-green padding-50 container__background-image-2">
+            <h2 class="title--dark">Contact</h2>
+            <form class="form container--margin-centered padding-10">
+                    <input class="form__input" type="text" placeholder="Name">
 
-<p>CodersCamp - projekt 1. Tutaj możesz zacząć swoją zabawę!</p>
+                    <input class="form__input" type="email" placeholder="Email">
 
+                    <input class="form__input" type="text" placeholder="Topic">
+
+                    <textarea class="textarea" placeholder="Message"></textarea>
+
+                <button class="form__button"><span class="position-relative">Send<span></button>
+            </form>
+        </section>
+    </main>
+    <footer class="container__footer">
+        <div class="container__footer--small flexbox">
+            <p class="font-size--small"><a  href="https://www.linkedin.com/in/dominik-pucha%C5%82a-804153162/" target="_blank">Dominik Puchała</a> &copy 2020</p>
+            <p class="font-size--small hide-on-small-device">Created with passion 💖 and tea ☕</p>
+        </div>
+        <a role="button" href="#header"><img class="arrow-up" src="./assets/image/arrow-up.svg" alt="back to top button"></a>
+    </footer>
 </body>
 </html>
