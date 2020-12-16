@@ -1,6 +1,6 @@
 # Portfolio website - Dominik Puchała
 ---
-### <div style="text-aling: center">[Live](https://suegro24.github.io/CodersCamp2020.Project.HTML-CSS.BusinessCard/)    [Code](https://github.com/Suegro24/CodersCamp2020.Project.HTML-CSS.BusinessCard)</div>  
+### <div align="center>[Live](https://suegro24.github.io/CodersCamp2020.Project.HTML-CSS.BusinessCard/)    [Code](https://github.com/Suegro24/CodersCamp2020.Project.HTML-CSS.BusinessCard)</div>  
 
 ## Table of contents
 * [Screenshots](#screenshots)
