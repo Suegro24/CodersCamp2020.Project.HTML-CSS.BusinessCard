@@ -10,6 +10,9 @@ body {
   width: 100%;
   font-family: 'Roboto', sans-serif; }
 
+html, body {
+  max-width: 100%; }
+
 a {
   text-decoration: none;
   color: #eeeaea;
@@ -53,10 +56,10 @@ p {
 .font-weight-700 {
   font-weight: 700; }
 
-.font-size--small {
+.font--small {
   font-size: 1.1rem; }
 
-.font-size--medium {
+.font--medium {
   font-size: 1.5rem; }
 
 .title, .title--dark {
@@ -66,7 +69,7 @@ p {
 .span--color-blue-sapphire {
   color: #22577A; }
 
-.button, .form__button {
+.button, .button--anchor, .form__button {
   position: relative;
   width: 120px;
   height: 40px;
@@ -78,7 +81,7 @@ p {
   font-size: 1.1rem;
   font-weight: 700;
   overflow: hidden; }
-  .button::before, .form__button::before {
+  .button::before, .button--anchor::before, .form__button::before {
     content: '';
     position: absolute;
     top: -200%;
@@ -88,22 +91,28 @@ p {
     background-color: #57cc99;
     border-radius: 50%;
     transition: all .5s; }
-  .button:hover::before, .form__button:hover::before {
+  .button:hover::before, .button--anchor:hover::before, .form__button:hover::before {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); }
 
+.button--anchor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0; }
+
 .position-relative {
   position: relative; }
 
-.progress, .progress-15, .progress-30, .progress-50, .progress-60, .progress-70, .progress-80 {
+.progress, .progress-begginer, .progress-intermediate, .progress-advanced, .progress-A1, .progress-B2 {
   position: relative;
   width: 200px;
   height: 20px;
   background: white;
   border: 2px solid black;
   border-radius: 2px; }
-  .progress::after, .progress-15::after, .progress-30::after, .progress-50::after, .progress-60::after, .progress-70::after, .progress-80::after {
+  .progress::after, .progress-begginer::after, .progress-intermediate::after, .progress-advanced::after, .progress-A1::after, .progress-B2::after {
     content: '';
     position: absolute;
     left: 0;
@@ -111,7 +120,7 @@ p {
     height: 20px;
     width: 0;
     background: linear-gradient(to right, #80ed99 0%, #38a2a3 100%); }
-  .progress::before, .progress-15::before, .progress-30::before, .progress-50::before, .progress-60::before, .progress-70::before, .progress-80::before {
+  .progress::before, .progress-begginer::before, .progress-intermediate::before, .progress-advanced::before, .progress-A1::before, .progress-B2::before {
     content: '';
     position: absolute;
     top: 50%;
@@ -120,41 +129,35 @@ p {
     color: black;
     z-index: 2; }
 
-.progress-15::after {
-  width: 30px; }
+.progress-begginer::after {
+  width: 40px; }
 
-.progress-15::before {
-  content: '15%'; }
+.progress-begginer::before {
+  content: 'Beginner'; }
 
-.progress-30::after {
-  width: 60px; }
+.progress-intermediate::after {
+  width: 80px; }
 
-.progress-30::before {
-  content: '30%'; }
+.progress-intermediate::before {
+  content: 'Intermediate'; }
 
-.progress-50::after {
-  width: 100px; }
-
-.progress-50::before {
-  content: '50%'; }
-
-.progress-60::after {
+.progress-advanced::after {
   width: 120px; }
 
-.progress-60::before {
-  content: '60%'; }
+.progress-advanced::before {
+  content: 'Advanced'; }
 
-.progress-70::after {
+.progress-A1::after {
+  width: 30px; }
+
+.progress-A1::before {
+  content: 'A1'; }
+
+.progress-B2::after {
   width: 140px; }
 
-.progress-70::before {
-  content: '70%'; }
-
-.progress-80::after {
-  width: 160px; }
-
-.progress-80::before {
-  content: '80%'; }
+.progress-B2::before {
+  content: 'B2'; }
 
 .container {
   width: 100%;
@@ -181,7 +184,8 @@ p {
 
 .container__background-image-1 {
   background-image: url("../image/tlo1.jpg");
-  background-size: 100% 100%;
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat; }
 
 .container__background-image-2 {
@@ -196,6 +200,9 @@ p {
 
 .flexbox {
   display: flex; }
+
+.block {
+  display: block; }
 
 .list {
   list-style: none;
@@ -226,9 +233,26 @@ p {
     transform: translateX(-50%); }
 
 .list__item--bg-blue-sapphire {
-  background-color: #22577A; }
-  .list__item--bg-blue-sapphire::after, .list__item--bg-blue-sapphire::before {
+  background-color: #22577A;
+  display: block;
+  overflow: hidden;
+  border: none; }
+  .list__item--bg-blue-sapphire::after {
     content: unset; }
+  .list__item--bg-blue-sapphire::before {
+    content: '';
+    position: absolute;
+    top: -200%;
+    left: -200%;
+    width: 200%;
+    height: 200%;
+    background-color: #57cc99;
+    border-radius: 50%;
+    transition: all .5s; }
+  .list__item--bg-blue-sapphire:hover::before {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
 
 .container__header {
   position: relative;
@@ -352,7 +376,8 @@ p {
 
 .skills {
   grid-template-columns: repeat(3, 1fr);
-  justify-items: center; }
+  justify-items: center;
+  overflow: hidden; }
 
 .skill {
   width: 350px;
@@ -385,29 +410,29 @@ p {
     transform: rotate(-15deg);
     transition: all 0.4s cubic-bezier(0.86, 0, 0.07, 1); }
 
-.image__html {
+.skill__image--html {
   background-image: url("../image/html5.svg"); }
 
-.image__css {
+.skill__image--css {
   background-image: url("../image/css3.svg"); }
 
-.image__sass {
+.skill__image--sass {
   background-image: url("../image/sass.svg");
   background-size: contain; }
 
-.image__js {
+.skill__image--js {
   background-image: url("../image/javascript.svg"); }
 
-.image__angular {
+.skill__image--angular {
   background-image: url("../image/angular.svg"); }
 
-.image__git {
+.skill__image--git {
   background-image: url("../image/git.svg"); }
 
-.image__england {
+.skill__image--england {
   background-image: url("../image/england.png"); }
 
-.image__spain {
+.skill__image--spain {
   background-image: url("../image/spain.png"); }
 
 .skill__name {
@@ -420,6 +445,9 @@ p {
   color: #eeeaea;
   background: #22577A;
   padding: 5px; }
+
+.justify-self-flex-end {
+  justify-self: flex-end; }
 
 .skill__name--git {
   justify-self: flex-end; }
@@ -493,7 +521,9 @@ p {
   color: #eeeaea;
   position: absolute;
   width: 100%;
-  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

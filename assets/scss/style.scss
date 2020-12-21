@@ -14,6 +14,10 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+html, body {
+    max-width: 100%;
+}
+
 a {
     text-decoration: none;
     color: $font;
@@ -72,11 +76,11 @@ p {
     font-weight: 700;
 }
 
-.font-size--small {
+.font--small {
     font-size: 1.1rem;
 }
 
-.font-size--medium {
+.font--medium {
     font-size:1.5rem;
 }
 
@@ -121,6 +125,14 @@ p {
     }
 }
 
+.button--anchor {
+    @extend .button;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
 .position-relative {
     position: relative;
 }
@@ -154,43 +166,31 @@ p {
     }
 }
 
-.progress-15 {
+.progress-begginer {
     @extend .progress;
 
     &::after {
-        width: 30px;
+        width: 40px;
     }
 
     &::before {
-        content: '15%';
+        content: 'Beginner';
     }
 }
 
-.progress-30 {
+.progress-intermediate {
     @extend .progress;
 
     &::after {
-        width: 60px;
+        width: 80px;
     }
 
     &::before {
-        content: '30%';
+        content: 'Intermediate';
     }
 }
 
-.progress-50 {
-    @extend .progress;
-
-    &::after {
-        width: 100px;
-    }
-
-    &::before {
-        content: '50%';
-    }
-}
-
-.progress-60 {
+.progress-advanced {
     @extend .progress;
 
     &::after {
@@ -198,11 +198,23 @@ p {
     }
 
     &::before {
-        content: '60%';
+        content: 'Advanced';
     }
 }
 
-.progress-70 {
+.progress-A1 {
+    @extend .progress;
+
+    &::after {
+        width: 30px;
+    }
+
+    &::before {
+        content: 'A1';
+    }
+}
+
+.progress-B2 {
     @extend .progress;
 
     &::after {
@@ -210,19 +222,7 @@ p {
     }
 
     &::before {
-        content: '70%';
-    }
-}
-
-.progress-80 {
-    @extend .progress;
-
-    &::after {
-        width: 160px;
-    }
-
-    &::before {
-        content: '80%';
+        content: 'B2';
     }
 }
 
@@ -256,7 +256,8 @@ p {
 
 .container__background-image-1 {
     background-image: url('../image/tlo1.jpg');
-    background-size: 100% 100%;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
 }
 
@@ -275,6 +276,10 @@ p {
 
 .flexbox {
     display: flex;
+}
+
+.block {
+    display: block;
 }
 
 .list {
@@ -320,9 +325,30 @@ p {
 .list__item--bg-blue-sapphire {
     @extend .list__item;
     background-color: $blue-sapphire;
+    display: block;
+    overflow: hidden;
+    border: none;
 
-    &::after, &::before {
+    &::after {
         content: unset;
+    }
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: -200%;
+        left: -200%;
+        width: 200%;
+        height: 200%;
+        background-color: $medium-aquamarine;
+        border-radius: 50%;
+        transition: all .5s;
+    }
+
+    &:hover::before {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 }
 
@@ -479,6 +505,7 @@ p {
 .skills {
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
+    overflow: hidden;
 }
 
 .skill {
@@ -544,36 +571,36 @@ p {
     }
 }
 
-.image__html {
+.skill__image--html {
     background-image: url('../image/html5.svg');
 }
 
-.image__css {
+.skill__image--css {
     background-image: url('../image/css3.svg');
 }
 
-.image__sass {
+.skill__image--sass {
     background-image: url('../image/sass.svg');
     background-size: contain;
 }
 
-.image__js {
+.skill__image--js {
     background-image: url('../image/javascript.svg');
 }
 
-.image__angular {
+.skill__image--angular {
     background-image: url('../image/angular.svg');
 }
 
-.image__git {
+.skill__image--git {
     background-image: url('../image/git.svg');
 }
 
-.image__england {
+.skill__image--england {
     background-image: url('../image/england.png');
 }
 
-.image__spain {
+.skill__image--spain {
     background-image: url('../image/spain.png');
 }
 
@@ -587,6 +614,10 @@ p {
     color: $font;
     background: $blue-sapphire;
     padding: 5px;
+}
+
+.justify-self-flex-end {
+    justify-self: flex-end;
 }
 
 .skill__name--git {
@@ -682,7 +713,9 @@ p {
     color: $font;
     position: absolute;
     width: 100%;
-    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
