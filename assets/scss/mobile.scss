@@ -2,20 +2,25 @@
 
 @media (max-width: 1300px) {
     .container__projects {
-        grid-template-columns: repeat(2, 1fr);
+        -ms-grid-columns: (1fr, 2);
+            grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 1150px) {
     .skills {
-        grid-template-columns: repeat(2, 1fr);
+        -ms-grid-columns: (1fr, 2);
+            grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 1000px) {
     .container__about-box {
         width: 40vw;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         min-width: 350px;
     }
 }
@@ -23,12 +28,14 @@
 @media (max-width: 800px) {
     
     .skills {
-        grid-template-columns: repeat(1, 1fr);
+        -ms-grid-columns: (1fr, 1);
+            grid-template-columns: repeat(1, 1fr);
         row-gap: 60px;
     }
 
     .container__projects {
-        grid-template-columns: repeat(1, 1fr);
+        -ms-grid-columns: (1fr, 1);
+            grid-template-columns: repeat(1, 1fr);
     }
 
     .form {
@@ -65,6 +72,7 @@
 @media (max-width: 450px) {
 
     .container__header {
+        position: -webkit-sticky;
         position: sticky;
         top: 0;
         left: 0;
@@ -78,6 +86,8 @@
     }
 
     .hamburger {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
     }
 
@@ -90,17 +100,28 @@
         position: absolute;
         right: -10px;
         top: -10px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: space-evenly;
+            -ms-flex-pack: space-evenly;
+                justify-content: space-evenly;
         padding: 5px;
         margin: 0;
         width: 100vw;
         height: 100vh;
         background-color: $blue-sapphire;
         z-index: -1;
-        transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+                transform: translateX(-100%);
+        -webkit-transition: -webkit-transform .4s;
+        transition: -webkit-transform .4s;
         transition: transform .4s;
+        transition: transform .4s, -webkit-transform .4s;
         overflow: hidden;
     }
 
@@ -130,6 +151,9 @@
 
 @media (max-width: 350px) {
     .project__description {
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
 }
